@@ -1,0 +1,83 @@
+Nonlinear dynamics
+Dynamics from pure physical pov it is behaviour of matter under some fields in time
+Deadline 08.11.2024
+We are interested in behaviour of x coordinate in time.
+Derivate of momentum in time equal to force divided by mass(dp/dt = F/m)
+a = F/m -> 
+x..(t) = Fx (x,y,z)/m
+y.. (t) = Fy (x,y,z)/m
+z.. (t) = Fz (x,y,z)/m
+.. - acceleration, second derivative
+For 1D(dimension) in case of harmonic motion (slow movement of pendulum) can be described by x..(t) = (k*x)/m
+---------------------
+By nonlinear differential equations we mean for ex. that velocity is dependent of time  v.(t) = -v^2 - air resistance equation
+this equation can be solved in sense that d v(t)/dt = -v^2
+function that has this property is like v = 1/t -> derivative = -1/t^2 => -1/t^2 = -(1/t)^2
+This all in course of particle movement in 1D and 2D
+---------------------
+Subject is in context of evolution of bio systems
+x(t) does not be a position, this can be population density
+We can describe deer evolution in forest
+but we can have also population of wolves y(t)
+Lotka-Voltera
+If nothing goes wrong we need to be able to simulate reasonable behaviour of system, if we have more deers the number of wolver is growing but if we  have to many wolves - deer population decreses
+Wolves population will follow deer but with delay
+Predator - prey
+dx/dt = alpha*x - beta * x * y
+dy/dt = -gamma*x + delta * x * y
+--------------------
+Exercise expalanation
+Fixed point - is simple a point that have property if f(x0) = x0 if we have function f(x)
+If f(x) = sin(x) we analyze condition like f(x*) = sinx* = x* -> x* = 0
+In our case we have more specific: 
+dx(t)/dt = f(x)
+Fixed point is f(x*) = 0
+Zero because if we are at fixed point -> dx(t)/dt = 0 that means that x(t) = t + c1
+Boundary value f(0) = c1
+Example:
+dx(t)/dt = 2t (f(t))
+What is fixed point?
+f(t*) = 0
+2t* = 0 => t* = 0
+New Example
+x(t) = x^2
+x(t*) = (t*)^2 = 0^2 = 0
+--------------------
+Several fixed points for several x in equation
+--------------------
+Phase portraits in physics - if you want to plot position and velocity on the same graph (2 axis velocity and position)
+At very specific time we will have some v and x, then we put more time values and plot results
+  V
+  |
+v0|----0
+  |    |
+  |    |
+  |    |
+  -------------> X
+       x0 
+--------------------
+x. = x(x-1)(x-2)
+(d/t)x(t) = x(t)(x(t)-1)(x(t)-2), x(t=0)=0.1
+x(t=delta(t)
+so we want to know where it goes)
+--------------------
+So solve equation numerically we need to know the value of this equation at different arugments, so we need to plot it for different values of x
+
+25.10.2024
+1. ordinary differential equations (first order)
+x = x(t) x. =- dx(t)/dt, general definition F(t,x,x.) = 0
+2. general solution to diff. equation: x = phi(t;c)(family of functions that have parameter t and also have constant c)
+3. Example: x. = 2x => dx(t)/dt = 2x(t) => first guess x(t) = t lets check if it is true, 1 != 2*t 
+2nd guess x(t) = c*e^2t
+d/dt(c*e^2t)=2*c*e^2t use chain rule => c*2*e^2t = 2*C*e^2t = > 1=1 (family of solutions)
+
+4. Unique solution <=> are determined by initial boundaries if i thinking function x(t) i have x(t=0) = x0 = 2
+5. | x. = 2x => x(t) = 2*e^2t
+   | x(0) = 2
+   so x(1) = 2*e^2*1 
+
+6. x. = x*(x-1)(x-2)
+lets guess x(t) = (1 = e^2t+2c +- sqrt(1+e^2t+2c))/(1+e^2t+2c) - right guess
+x. = d/dt((1 = e^2t+2c +- sqrt(1+e^2t+2c))/(1+e^2t+2c)) = (2 * e^2t+2c +- (1*2*e^2t+2c)/(2*sqrt(1+e^2t+2c)) * (1 + e^2t+2c) -  (1+e^2t+2c +- sqrt(1+e^2t+2c)*(2*e^2t+2c)))/(1+e^2t+2c)^2
+= ((1 +- 1/2sqrt(1+e^2t+2c))(1+2e^2t+2c)-(1+e^2t+2c=-sqrt()*2e^2t+2c))/(1+e^2t+2c)^2 =
+ {(1+e^2t+2c) +=}

@@ -395,7 +395,7 @@
 
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{68}{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
 \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
@@ -427,7 +427,7 @@
     { \hspace*{\fill} \\}
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{69}{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} Parameters for Euler and Midpoint methods}
 \PY{n}{dt} \PY{o}{=} \PY{l+m+mf}{0.01}  \PY{c+c1}{\PYZsh{} time step for simulations}
@@ -437,7 +437,7 @@
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{70}{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{}\PYZsh{} Task 1: Fixed points and stability analysis}
 
@@ -466,7 +466,7 @@
     { \hspace*{\fill} \\}
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{71}{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{}\PYZsh{} Task 2: Phase portraits for various equations}
 \PY{k}{def} \PY{n+nf}{capped\PYZus{}value}\PY{p}{(}\PY{n}{val}\PY{p}{,} \PY{n}{max\PYZus{}val}\PY{o}{=}\PY{n}{MAX\PYZus{}VAL}\PY{p}{)}\PY{p}{:}
@@ -535,7 +535,7 @@
     { \hspace*{\fill} \\}
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{72}{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{}\PYZsh{} Task 3: Phase portraits for linear system x\PYZsq{} = Ax with 2x2 subplot layout}
 \PY{c+c1}{\PYZsh{} Define matrices for linear systems}
@@ -587,7 +587,7 @@
     { \hspace*{\fill} \\}
     
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{}\PYZsh{} Task 4: Nonlinear system and modified Lotka\PYZhy{}Volterra model}
 \PY{c+c1}{\PYZsh{} Define the nonlinear system}
@@ -597,22 +597,53 @@
 \PY{k}{def} \PY{n+nf}{fy}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{n}{y} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{y}\PY{p}{)}
 
-\PY{c+c1}{\PYZsh{} Set of initial conditions for phase portrait}
-\PY{n}{initial\PYZus{}conditions} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{1.5}\PY{p}{,} \PY{l+m+mf}{1.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{2.5}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{2.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}\PY{p}{]}
+\PY{c+c1}{\PYZsh{} Define the modified Lotka\PYZhy{}Volterra system}
+\PY{k}{def} \PY{n+nf}{fx\PYZus{}modified}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
+    \PY{n}{a} \PY{o}{=} \PY{l+m+mf}{1.0}  \PY{c+c1}{\PYZsh{} Prey growth rate}
+    \PY{n}{b} \PY{o}{=} \PY{l+m+mf}{0.1}  \PY{c+c1}{\PYZsh{} Predation rate}
+    \PY{k}{return} \PY{n}{x} \PY{o}{*} \PY{p}{(}\PY{n}{a} \PY{o}{\PYZhy{}} \PY{n}{b} \PY{o}{*} \PY{n}{y}\PY{p}{)}  \PY{c+c1}{\PYZsh{} Prey equation}
 
-\PY{c+c1}{\PYZsh{} Plotting phase portrait}
-\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{)}\PY{p}{)}
-\PY{k}{for} \PY{n}{x0}\PY{p}{,} \PY{n}{y0} \PY{o+ow}{in} \PY{n}{initial\PYZus{}conditions}\PY{p}{:}
+\PY{k}{def} \PY{n+nf}{fy\PYZus{}modified}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
+    \PY{n}{c} \PY{o}{=} \PY{l+m+mf}{0.1}  \PY{c+c1}{\PYZsh{} Growth rate of predators}
+    \PY{n}{d} \PY{o}{=} \PY{l+m+mf}{1.0}  \PY{c+c1}{\PYZsh{} Predation death rate}
+    \PY{k}{return} \PY{n}{y} \PY{o}{*} \PY{p}{(}\PY{n}{c} \PY{o}{*} \PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{d}\PY{p}{)}  \PY{c+c1}{\PYZsh{} Predator equation}
+
+\PY{c+c1}{\PYZsh{} Set of initial conditions for the original nonlinear system}
+\PY{n}{initial\PYZus{}conditions\PYZus{}nonlinear} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{1.5}\PY{p}{,} \PY{l+m+mf}{1.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{2.5}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mf}{2.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{)}\PY{p}{]}
+
+\PY{c+c1}{\PYZsh{} Plotting phase portrait for the original nonlinear system}
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{x0}\PY{p}{,} \PY{n}{y0} \PY{o+ow}{in} \PY{n}{initial\PYZus{}conditions\PYZus{}nonlinear}\PY{p}{:}
     \PY{n}{traj\PYZus{}x}\PY{p}{,} \PY{n}{traj\PYZus{}y} \PY{o}{=} \PY{n}{midpoint\PYZus{}method}\PY{p}{(}\PY{n}{fx}\PY{p}{,} \PY{n}{fy}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{y0}\PY{p}{,} \PY{n}{dt}\PY{p}{,} \PY{n}{time\PYZus{}steps}\PY{p}{)}
     \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{traj\PYZus{}x}\PY{p}{,} \PY{n}{traj\PYZus{}y}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Starting at (}\PY{l+s+si}{\PYZob{}}\PY{n}{x0}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}}\PY{n}{y0}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 
-\PY{c+c1}{\PYZsh{} Fixed points}
+\PY{c+c1}{\PYZsh{} Fixed points for the original system}
 \PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Fixed Points}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 
-\PY{c+c1}{\PYZsh{} Labeling the plot}
+\PY{c+c1}{\PYZsh{} Labeling the plot for the original nonlinear system}
 \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Phase Portrait for Nonlinear System: \PYZdl{}dot}\PY{l+s+si}{\PYZob{}x\PYZcb{}}\PY{l+s+s2}{ = x(3 \PYZhy{} x \PYZhy{} 2y)\PYZdl{}, \PYZdl{}dot}\PY{l+s+si}{\PYZob{}y\PYZcb{}}\PY{l+s+s2}{ = y(2 \PYZhy{} x \PYZhy{} y)\PYZdl{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{y}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Set of initial conditions for modified Lotka\PYZhy{}Volterra model}
+\PY{n}{initial\PYZus{}conditions\PYZus{}lotka} \PY{o}{=} \PY{p}{[}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{1.5}\PY{p}{,} \PY{l+m+mf}{1.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}
+
+\PY{c+c1}{\PYZsh{} Plotting phase portrait for the modified Lotka\PYZhy{}Volterra model}
+\PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{x0}\PY{p}{,} \PY{n}{y0} \PY{o+ow}{in} \PY{n}{initial\PYZus{}conditions\PYZus{}lotka}\PY{p}{:}
+    \PY{n}{traj\PYZus{}x}\PY{p}{,} \PY{n}{traj\PYZus{}y} \PY{o}{=} \PY{n}{midpoint\PYZus{}method}\PY{p}{(}\PY{n}{fx\PYZus{}modified}\PY{p}{,} \PY{n}{fy\PYZus{}modified}\PY{p}{,} \PY{n}{x0}\PY{p}{,} \PY{n}{y0}\PY{p}{,} \PY{n}{dt}\PY{p}{,} \PY{n}{time\PYZus{}steps}\PY{p}{)}
+    \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{traj\PYZus{}x}\PY{p}{,} \PY{n}{traj\PYZus{}y}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Starting at (}\PY{l+s+si}{\PYZob{}}\PY{n}{x0}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}}\PY{n}{y0}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Fixed points for the modified Lotka\PYZhy{}Volterra model}
+\PY{n}{plt}\PY{o}{.}\PY{n}{scatter}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Fixed Points}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} Labeling the plot for the modified Lotka\PYZhy{}Volterra model}
+\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Phase Portrait for Modified Lotka\PYZhy{}Volterra Model}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Prey Population (x)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Predator Population (y)}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{p}{)}
 \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
@@ -621,6 +652,11 @@
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{task_1_files/task_1_5_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{task_1_files/task_1_5_1.png}
     \end{center}
     { \hspace*{\fill} \\}
     
